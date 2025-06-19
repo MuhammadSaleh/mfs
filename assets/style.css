@@ -1,0 +1,187 @@
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #333
+}
+
+body.no-overflow {
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 10vw;
+}
+
+table.table th {
+    border-bottom: 2px solid #000;
+    padding: 10px;
+    text-align: start;
+}
+
+table.table td {
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10px;
+}
+
+table.table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+.name {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.name:hover {
+    text-decoration: underline;
+    color: #207cff;
+}
+
+del.old-price {
+    color: #999;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+
+ins.price {
+    text-decoration: none;
+    font-weight: bold;
+    color: #009300;
+}
+
+.brands {
+    white-space: nowrap;
+}
+
+.images {
+    display: flex;
+    gap: 10px;
+}
+
+.images img {
+    border: 1px solid #999;
+    height: 50px;
+    width: 50px;
+    transition: 0.2s;
+    border-radius: 5px;
+    position: relative;
+    background-color: #FFF;
+}
+
+.images img:hover {
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    transform: scale(3);
+    border-color: transparent;
+    z-index: 9;
+}
+
+p.overview {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+button.view-description,
+button.view-overview {
+    color: #207cff;
+    white-space: nowrap;
+    background: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    display: block;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+
+button.view-description:hover,
+button.view-overview:hover {
+    opacity: 1;
+}
+
+button.view-description:active,
+button.view-overview:active {
+    transform: scale(0.9);
+}
+
+.dialog {
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: #d9d9d9e0;
+    display: flex;
+    overflow: hidden auto;
+    justify-content: center;
+    align-items: flex-start;
+    backdrop-filter: blur(1px);
+}
+
+.dialog.open {
+    z-index: 9999;
+    opacity: 1;
+}
+
+.dialog-content {
+    max-width: 960px;
+    margin: 5vw 0;
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 10px;
+    line-height: 1.5;
+    transform: scale(0.5);
+    transition: inherit;
+}
+
+.dialog.open .dialog-content {
+    transform: scale(1);
+}
+
+.dialog-actions {
+    position: absolute;
+    top: 5vw;
+    margin-top: -40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dialog-actions button {
+    background-color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dialog-actions button:hover {
+    color: #000;
+}
