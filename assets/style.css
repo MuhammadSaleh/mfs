@@ -46,6 +46,8 @@ table.table {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    max-width: 300px;
+    line-height: 1.5;
 }
 
 .name:hover {
@@ -141,6 +143,7 @@ button.view-overview:active {
     justify-content: center;
     align-items: flex-start;
     backdrop-filter: blur(1px);
+    padding: 0 30px;
 }
 
 .dialog.open {
@@ -150,7 +153,7 @@ button.view-overview:active {
 
 .dialog-content {
     max-width: 960px;
-    margin: 5vw 0;
+    margin: max(5vw, 100px) 0;
     background-color: #FFF;
     padding: 30px;
     border-radius: 10px;
@@ -165,7 +168,7 @@ button.view-overview:active {
 
 .dialog-actions {
     position: absolute;
-    top: 5vw;
+    top: max(5vw, 100px);
     margin-top: -40px;
     display: flex;
     align-items: center;
@@ -184,4 +187,39 @@ button.view-overview:active {
 
 .dialog-actions button:hover {
     color: #000;
+}
+
+@media all and (max-width: 768px) {
+    thead {
+        display: none;
+    }
+
+    table.table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #999;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    table.table tbody {
+        display: flex;
+        flex-direction: column;
+        a: 30;
+        gap: 30px;
+    }
+
+    table.table tbody tr td {
+        border: none;
+        padding: 5px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .pricing {
+        flex-direction: row-reverse;
+        gap: 10px;
+        justify-content: flex-end;
+    }
 }
