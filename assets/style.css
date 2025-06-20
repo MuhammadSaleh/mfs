@@ -78,6 +78,7 @@ ins.price {
 .images {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .images img {
